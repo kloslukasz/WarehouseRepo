@@ -1,4 +1,4 @@
-package pl.lklos;
+package pl.lklos.model;
 
 import java.io.Serializable;
 

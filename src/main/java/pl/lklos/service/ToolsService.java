@@ -1,8 +1,8 @@
-package pl.lklos;
+package pl.lklos.service;
 
-import pl.lklos.ToolDao;
-import pl.lklos.ToolDaoImpl;
-import pl.lklos.Tool;
+import pl.lklos.dao.ToolDao;
+import pl.lklos.dao.ToolDaoImpl;
+import pl.lklos.model.Tool;
 
 import java.util.List;
 import java.util.Optional;

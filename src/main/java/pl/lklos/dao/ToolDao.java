@@ -1,4 +1,6 @@
-package pl.lklos;
+package pl.lklos.dao;
+
+import pl.lklos.model.Tool;
 
 import java.util.List;
 
