@@ -1,5 +1,7 @@
 package pl.lklos.controller;
 
+import pl.lklos.service.UserService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,8 @@ import java.io.IOException;
 
 @WebServlet(name = "Login" , value = "/login")
 public class LoginController extends HttpServlet {
+
+    private UserService userService = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,8 +37,7 @@ public class LoginController extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        if (username != null && "user".equals(username)
-                && password != null && "pass".equals(password)) {
+        if (username != null && password != null && userService.isUserValid(username, password)){
             req.getSession().setAttribute("userName", username);
             resp.sendRedirect("/");
         } else {
@@ -47,3 +50,7 @@ public class LoginController extends HttpServlet {
         resp.sendRedirect("/login");
     }
 }
+
+
+//username != null && "user".equals(username)
+//        && password != null && "pass".equals(password)) {
