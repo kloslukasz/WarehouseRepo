@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<%@include file="header.jsp"%>
+
 <h2>Tools:</h2>
 
 <table>
