@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
 
     private void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.getSession().invalidate();
-        resp.sendRedirect("/login");
+        resp.sendRedirect(req.getContextPath() + "/login");
     }
 }
 
